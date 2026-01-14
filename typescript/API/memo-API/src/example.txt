@@ -1,0 +1,87 @@
+import express, { Request, Response } from "express";
+
+const app = express();
+app.use(express.json());
+
+type Memo = {
+  id: number;
+  text: string;
+  tags: string[];
+  createdAt: string;
+};
+
+let memos: Memo[] = [];
+let nextId = 1;
+
+app.get("/api/memos", (req: Request, res: Response) => {
+  res.json(memos);
+});
+
+app.get("/api/memos/:id", (req: Request, res: Response) => {
+  const id = Number(req.params.id);
+  const memo = memos.find(m => m.id === id);
+
+  if (!memo) {
+    return res.status(404).json({ error: "not found" });
+  }
+
+  res.json(memo);
+});
+
+app.post("/api/memos", (req: Request, res: Response) => {
+  const { text, tags } = req.body as {
+    text?: string;
+    tags?: string[];
+  };
+
+  if (!text) {
+    return res.status(400).json({ error: "text required" });
+  }
+
+  const memo: Memo = {
+    id: nextId++,
+    text,
+    tags: Array.isArray(tags) ? tags : [],
+    createdAt: new Date().toISOString(),
+  };
+
+  memos.push(memo);
+  res.status(201).json(memo);
+});
+
+app.put("/api/memos/:id", (req: Request, res: Response) => {
+  const id = Number(req.params.id);
+  const memo = memos.find(m => m.id === id);
+
+  if (!memo) {
+    return res.status(404).json({ error: "not found" });
+  }
+
+  if (typeof req.body.text === "string") {
+    memo.text = req.body.text;
+  }
+
+  if (Array.isArray(req.body.tags)) {
+    memo.tags = req.body.tags;
+  }
+
+  res.json(memo);
+});
+
+app.delete("/api/memos/:id", (req: Request, res: Response) => {
+  const id = Number(req.params.id);
+  const before = memos.length;
+
+  memos = memos.filter(m => m.id !== id);
+
+  if (before === memos.length) {
+    return res.status(404).json({ error: "not found" });
+  }
+
+  res.status(204).end();
+});
+
+app.listen(3000, () => {
+  console.log("Memo API (TS) running");
+});
+
