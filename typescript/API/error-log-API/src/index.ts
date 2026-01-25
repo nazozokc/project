@@ -54,4 +54,26 @@ app.post("/api/error", (req: Request, res: Response) => {
     level,
     time: new Date().toISOString(),
   };
+
+  errors.push(newError);
+  saveError(errors);
+
+  res.status(204).end();
+});
+
+app.delete("/api/error/:id", (req: Request, res: Response) => {
+  const id = Number(req.params.id);
+  const before = errors.length;
+  errors = errors.filter((e) => e.id !== id);
+  saveError(errors);
+
+  if (before === errors.length) {
+    return res.json(404).json({ error: "not found" });
+  }
+
+  res.status(204).end();
+});
+
+app.listen(3000, () => {
+  console.log("enable!!!");
 });
