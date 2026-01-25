@@ -1,7 +1,6 @@
 import express, { Request, Response } from "express";
 import fs from "fs";
 const app = express();
-
 app.use(express.json());
 
 const FILE_PATH = "./history.json";
