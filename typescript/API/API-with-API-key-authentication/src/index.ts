@@ -21,5 +21,9 @@ const loadApiKeys = (): ApiKeyStore => {
 };
 
 declare global {
-  namespace Express {}
+  namespace Express {
+    interface Request {
+      apikey?: ApiKey
+    }
+  }
 }
