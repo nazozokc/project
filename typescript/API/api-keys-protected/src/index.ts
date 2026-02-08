@@ -76,3 +76,14 @@ app.post("/api-keys", (req, res) => {
 
   res.status(201).json({ apiKey: newKey.key })
 })
+
+app.get("/protected", apiKeyAuth, (req, res) => {
+  res.json({
+    message: "protected data",
+    issuedAt: req.apiKey?.createdAt
+  })
+})
+
+app.listen(3000, () => {
+  console.log("enable!!!!!");
+})
