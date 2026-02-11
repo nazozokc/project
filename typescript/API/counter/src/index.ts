@@ -27,5 +27,3 @@ app.post("/api/count/reset", (req: Request, res: Response) => {
 app.listen(3000, () => {
   console.log("enable!!!!");
 });
-
-export { app };
