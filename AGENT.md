@@ -12,3 +12,8 @@
 ( 今後も増える可能性あり )
 
 # 参考URL
+<https://www.typescriptlang.org/> 
+<https://svelte.dev/docs/svelte/getting-started>
+<https://cs.lmu.edu/~ray/notes/astro/>
+<https://rust-lang.org/>
+
