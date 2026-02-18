@@ -16,4 +16,4 @@
 <https://svelte.dev/docs/svelte/getting-started>
 <https://cs.lmu.edu/~ray/notes/astro/>
 <https://rust-lang.org/>
-
+<https://react.wiki/> 
