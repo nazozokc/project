@@ -26,21 +26,21 @@
  * Request, Response, NextFunction
  *  → TypeScriptで型安全にするために使用
  */
-import express, { Request, Response, NextFunction } from "express"
+import express, { Request, Response, NextFunction } from "express";
 
 /**
  * fs (File System)
  *  → ファイル読み書き用
  *  → 今回はJSONを簡易データベースとして使う
  */
-import fs from "fs"
+import fs from "fs";
 
 /**
  * crypto
  *  → 安全なランダム文字列生成に使用
  *  → APIキー生成で使う
  */
-import crypto from "crypto"
+import crypto from "crypto";
 
 
 
