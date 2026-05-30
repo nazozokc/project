@@ -1,0 +1,8 @@
+SRC ?= hello.c
+OUT := $(basename $(SRC))
+
+all:
+	gcc $(SRC) -o $(OUT)
+
+clean:
+	rm -f $(OUT)
