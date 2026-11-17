@@ -1,7 +1,11 @@
-#include "stdio.h"
+#include <stdio.h>
+
+int returns(void) { return 0; }
+
 int main(void) {
-  int 屋;
-  屋 = 1;
-  printf("%d", 屋);
+  int x = returns();
+
+  printf("%d\n", x);
+
   return 0;
 }
