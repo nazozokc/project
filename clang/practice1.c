@@ -9,9 +9,9 @@ int main(void) {
   mt = 0;
   shoji = x;
 
-  while (shoji >= 20000) {
+  while (shoji < 20000) {
     mt += 1;
-    shoji += (int)(3000 + (shoji * 0.5));
+    shoji = (int)(shoji * 0.05) + 3000;
   }
 
   printf("最初の所助金が%d円の場合は\n", x);
