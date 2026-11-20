@@ -1,17 +1,11 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/home.tsx";
-import SamplePage from "./pages/SamplePage.tsx";
+import { Calendar } from "@typescript-calendar-lib/react";
+import "@typescript-calendar-lib/react/calendar.css"; // required — component styles
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/sample-page" element={<SamplePage />} />
-        </Routes>
-      </BrowserRouter>
+      <Calendar year={2026} month={9} colorScheme="ocean" theme="modern" />
     </>
   );
 }

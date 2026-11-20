@@ -5,6 +5,7 @@
     "": {
       "name": "react-app",
       "dependencies": {
+        "@typescript-calendar-lib/react": "^0.7.0",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
         "react-router-dom": "^7.18.5",
@@ -224,6 +225,14 @@
     "@types/react": ["@types/react@19.3.0", "", { "dependencies": { "csstype": "^3.2.2" } }, "sha512-N0rFCuH9YoxG9/m61l9MfpJKfmLOVU0em7ipIz6TRgSSkvReLB9vL85GB+yr8Bs5leqpvg96JSwF4ZS1s4viQg=="],
 
     "@types/react-dom": ["@types/react-dom@19.3.0", "", { "peerDependencies": { "@types/react": "^19.3.0" } }, "sha512-ZI7bU42mZXXKHn/qNLEw2IrbiINU7X5+vfgdixBHkCNpYWXjKgfQ/P+uyGb5CjOLB9UcnTeg3rylQtV2hym44Q=="],
+
+    "@typescript-calendar-lib/core": ["@typescript-calendar-lib/core@0.7.0", "", {}, "sha512-syDv4YZhVSCj4njVhaD9vAv4zpfZa73srDCvfy1APSkNL8yQ7C9gnwxFfYdhrW0SLlsRY9v9qnqulSh0GR3aTw=="],
+
+    "@typescript-calendar-lib/react": ["@typescript-calendar-lib/react@0.7.0", "", { "dependencies": { "@typescript-calendar-lib/core": "^0.7.0", "@typescript-calendar-lib/tui": "^0.7.0", "@typescript-calendar-lib/web": "^0.7.0" }, "peerDependencies": { "react": "^19" } }, "sha512-p6ZoObfQh55S7NJM63q41YT0w07E4J11F5aMAotXha7IFSZHraOL2VWpaNlpE712SwxYrIEBMdjDVK8pNgd/3g=="],
+
+    "@typescript-calendar-lib/tui": ["@typescript-calendar-lib/tui@0.7.0", "", { "dependencies": { "@typescript-calendar-lib/core": "^0.7.0" } }, "sha512-WqVxv4gqIfNP3T9Rlrc5FllSLQ679H63mFH1hEBaYrXetzclsMiIralz3Jdvq9EsT8/36nRjWa6u+gCyGP1bDQ=="],
+
+    "@typescript-calendar-lib/web": ["@typescript-calendar-lib/web@0.7.0", "", { "dependencies": { "@typescript-calendar-lib/core": "^0.7.0" } }, "sha512-nlx2rxFuijiuUgrChKm+lFuxLc5fU78sdBmrAvGLIwrTXJJ1+5OlHfRDsFJk1XI0b9yHPRi+v9sy0Q5U0xDwpw=="],
 
     "@typescript-eslint/eslint-plugin": ["@typescript-eslint/eslint-plugin@8.72.1", "", { "dependencies": { "@eslint-community/regexpp": "^4.12.2", "@typescript-eslint/scope-manager": "8.72.1", "@typescript-eslint/type-utils": "8.72.1", "@typescript-eslint/utils": "8.72.1", "@typescript-eslint/visitor-keys": "8.72.1", "ignore": "^7.0.5", "natural-compare": "^1.4.0", "ts-api-utils": "^2.5.0" }, "peerDependencies": { "@typescript-eslint/parser": "^8.72.1", "eslint": "^8.57.0 || ^9.0.0 || ^10.0.0", "typescript": ">=4.8.4 <6.1.0" } }, "sha512-5CokTWXpmbylfFabsbvHC0CAw3XLaGnoa+nFJX5FR592h/LoZsENUE6p/rg5xvkKrFEXz6pYmgI29AgXc2N3BQ=="],
 
